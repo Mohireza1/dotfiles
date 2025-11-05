@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/mohireza/Downloads/v2rayN-linux-64/v2rayN
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=v2rayN
+Name=v2rayN
+Comment[en_US]=v2rayN
+Comment=v2rayN

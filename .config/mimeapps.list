@@ -1,0 +1,9 @@
+[Added Associations]
+application/zip=unzip.desktop;
+image/png=/home/mohireza/.local/share/applications/mirage-12.desktop;
+text/plain=code.desktop;
+
+[Default Applications]
+application/zip=unzip.desktop;
+image/png=/home/mohireza/.local/share/applications/mirage-12.desktop;
+text/plain=code.desktop;

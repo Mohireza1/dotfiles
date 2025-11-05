@@ -1,0 +1,73 @@
+[window]
+w = 791
+h = 1390
+toolbar = True
+statusbar = True
+thumbpane = True
+
+[prefs]
+simple-bgcolor = False
+bgcolor-red = 0
+bgcolor-green = 0
+bgcolor-blue = 0
+open_all = True
+hidden = False
+use_last_dir = True
+last_dir = /home/mohireza
+fixed_dir = /home/mohireza
+open_mode = 0
+last_mode = 2
+listwrap_mode = 0
+slideshow_delay = 1
+slideshow_random = False
+zoomquality = 2
+quality_save = 90
+disable_screensaver = False
+slideshow_in_fullscreen = False
+confirm_delete = True
+preloading_images = True
+savemode = 2
+start_in_fullscreen = False
+thumbsize = 128
+screenshot_delay = 2
+
+[actions]
+num_actions = 4
+names[0] = Open in GIMP
+commands[0] = gimp %F &
+shortcuts[0] = <Control>e
+batch[0] = False
+names[1] = Create Thumbnail
+commands[1] = convert %F -thumbnail 150x150 %Pt_%N.jpg
+shortcuts[1] = <Alt>t
+batch[1] = False
+names[2] = Create Thumbnails
+commands[2] = convert %F -thumbnail 150x150 %Pt_%N.jpg
+shortcuts[2] = <Control><Alt>t
+batch[2] = True
+names[3] = Move to Favorites
+commands[3] = mkdir -p ~/mirage-favs; mv %F ~/mirage-favs; [NEXT]
+shortcuts[3] = <Control><Alt>f
+batch[3] = False
+
+[recent]
+num_recent = 9
+num[0] = 45
+urls[0,0] = /home/mohireza/2025-11-04-143252_hyprshot.png
+num[1] = 45
+urls[1,0] = /home/mohireza/2025-11-04-143422_hyprshot.png
+num[2] = 45
+urls[2,0] = /home/mohireza/2025-11-04-104640_hyprshot.png
+num[3] = 45
+urls[3,0] = /home/mohireza/2025-11-04-094606_hyprshot.png
+num[4] = 45
+urls[4,0] = /home/mohireza/2025-11-04-000849_hyprshot.png
+num[5] = 45
+urls[5,0] = /home/mohireza/2025-11-03-235328_hyprshot.png
+num[6] = 45
+urls[6,0] = /home/mohireza/2025-11-03-230933_hyprshot.png
+num[7] = 45
+urls[7,0] = /home/mohireza/2025-11-03-230848_hyprshot.png
+num[8] = 45
+urls[8,0] = /home/mohireza/2025-11-03-230820_hyprshot.png
+
