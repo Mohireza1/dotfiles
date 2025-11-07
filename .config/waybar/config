@@ -11,7 +11,7 @@
     "margin-left": 10,
     "margin-right": 10,
     "modules-left": [
-      "group/traym",
+      "tray",
       // "custom/spacer5",
       "hyprland/workspaces",
       // "custom/spacer2",
@@ -50,10 +50,10 @@
       }
     },
     "custom/weather": {
-      "format": "{}° Oulu",
+      "format": "{}°",
       "tooltip": true,
       "interval": 60,
-      "exec": "wttrbar --nerd --location Oulu",
+      "exec": "wttrbar --nerd --location Tehran",
       "return-type": "json"
     },
     "group/traym": {
@@ -109,7 +109,7 @@
     //   "exec": "~/.config/hypr/themes/Mocha-Power/bat-pp.sh refresh",
     //   "exec-on-event": true,
     //   "format": "{text}%",
-    //   "on-click": "~/.config/hypr/themes/Mocha-Power/bat-pp.sh toggle",
+    //   "on-click": "tlpui",
     //   "tooltip": "true",
     //   "tooltip-format": "{alt}"
     // },
@@ -124,7 +124,7 @@
       "format-full": "{icon}  {capacity}%",
       "format-charging": " {capacity}%",
       "format-plugged": " {capacity}%",
-      "format-alt": "{icon} {time}",
+      //"format-alt": "{icon} {time}",
       // "format-good": "", // An empty format will hide the module
       // "format-full": "",blue
       "format-icons": [
@@ -133,7 +133,8 @@
         "",
         "",
         ""
-      ]
+      ],
+      "on-click": "kitty -e tlpui"
     },
     // "custom/battery": {
     //   "return-type": "json",

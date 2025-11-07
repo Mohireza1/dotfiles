@@ -121,6 +121,10 @@
   background: @module_bg;
 }
 
+#waybar.main #tray {
+  padding-left: 10pt;
+  padding-right: 10pt;
+}
 #waybar.main #custom-weather {
   padding-right: 3pt;
 }
