@@ -1,6 +1,6 @@
 [window]
 w = 1269
-h = 688
+h = 1384
 toolbar = True
 statusbar = True
 thumbpane = True
@@ -51,23 +51,21 @@ shortcuts[3] = <Control><Alt>f
 batch[3] = False
 
 [recent]
-num_recent = 9
-num[0] = 45
-urls[0,0] = /home/mohireza/2025-11-06-172820_hyprshot.png
-num[1] = 39
-urls[1,0] = /home/mohireza/FlameGraph/optimized.svg
-num[2] = 40
-urls[2,0] = /home/mohireza/FlameGraph/flamegraph.svg
-num[3] = 42
-urls[3,0] = /home/mohireza/FlameGraph/example-perf.svg
-num[4] = 44
-urls[4,0] = /home/mohireza/FlameGraph/example-dtrace.svg
-num[5] = 45
-urls[5,0] = /home/mohireza/2025-11-04-143252_hyprshot.png
-num[6] = 45
-urls[6,0] = /home/mohireza/2025-11-04-143422_hyprshot.png
-num[7] = 45
-urls[7,0] = /home/mohireza/2025-11-04-104640_hyprshot.png
-num[8] = 45
-urls[8,0] = /home/mohireza/2025-11-04-094606_hyprshot.png
+num_recent = 8
+num[0] = 66
+urls[0,0] = /home/mohireza/Downloads/wallpapers/wallhaven-8392xy_2560x1440.png
+num[1] = 66
+urls[1,0] = /home/mohireza/Downloads/wallpapers/wallhaven-g8yj6d_2560x1440.png
+num[2] = 66
+urls[2,0] = /home/mohireza/Downloads/wallpapers/wallhaven-m3z1oy_2560x1440.png
+num[3] = 66
+urls[3,0] = /home/mohireza/Downloads/wallpapers/wallhaven-n6yrpl_2560x1440.png
+num[4] = 66
+urls[4,0] = /home/mohireza/Downloads/wallpapers/wallhaven-p2rr39_2560x1440.png
+num[5] = 66
+urls[5,0] = /home/mohireza/Downloads/wallpapers/wallhaven-q295q5_2560x1440.png
+num[6] = 66
+urls[6,0] = /home/mohireza/Downloads/wallpapers/wallhaven-qd8k57_2560x1440.png
+num[7] = 66
+urls[7,0] = /home/mohireza/Downloads/wallpapers/wallhaven-qd8kp7_2560x1440.png
 
