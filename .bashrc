@@ -15,3 +15,4 @@ export PATH=$PATH:/home/mohireza/.spicetify
 
 # Created by `pipx` on 2025-11-10 09:39:57
 export PATH="$PATH:/home/mohireza/.local/bin"
+bind 'set completion-ignore-case on'

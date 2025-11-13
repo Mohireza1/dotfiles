@@ -1,4 +1,4 @@
-connect.mdns_devices="[]"
-connect.dial_devices="[{\"address\":\"172.20.66.10\",\"app_state\":\"MISSING\",\"created_timestamp\":1762778081,\"device_id\":\"deadbeef-dead-beef-dead-c4985c5875a1\",\"dial_location_url\":\"http://172.20.66.10:56790/dd.xml\",\"display_name\":\"Living room\",\"last_seen\":1762782154,\"manufacturer\":\"THOMSON Inc.\",\"model_name\":\"SMART_TV\",\"product_cap\":\"\",\"public_ip\":\"104.28.217.138\",\"wol\":{\"all_interfaces\":false,\"delay_ms\":250,\"mac\":\"c4985c5875a1\",\"port\":9,\"retries\":80}}]"
 audio.play_bitrate_non_metered_migrated=true
+connect.dial_devices="[{\"address\":\"172.20.65.237\",\"app_state\":\"MISSING\",\"created_timestamp\":1762843031,\"device_id\":\"deadbeef-dead-beef-dead-c4985c5875a1\",\"dial_location_url\":\"http://172.20.65.237:56790/dd.xml\",\"display_name\":\"Living room\",\"last_seen\":1762865543,\"manufacturer\":\"THOMSON Inc.\",\"model_name\":\"SMART_TV\",\"product_cap\":\"\",\"public_ip\":\"104.28.217.138\",\"wol\":{\"all_interfaces\":false,\"delay_ms\":250,\"mac\":\"c4985c5875a1\",\"port\":9,\"retries\":80}}]"
+connect.mdns_devices="[]"
 app.browser.zoom-level=150

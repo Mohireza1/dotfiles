@@ -52,7 +52,7 @@
     "custom/weather": {
       "format": "{}°",
       "tooltip": true,
-      "interval": 60,
+      "interval": 600,
       "exec": "wttrbar --nerd --location Tehran",
       "return-type": "json"
     },
@@ -197,7 +197,7 @@
       "tooltip-format": "{swapUsed}/{swapTotal}GiB"
     },
     "network#info": {
-      "interval": 3,
+      "interval": 20,
       "format": "󱘖  Offline",
       "format-wifi": "{icon} {bandwidthDownBytes}",
       "format-ethernet": "󰈀 {bandwidthDownBytes}",
