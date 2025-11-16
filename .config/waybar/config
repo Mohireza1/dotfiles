@@ -53,7 +53,7 @@
       "format": "{}°",
       "tooltip": true,
       "interval": 600,
-      "exec": "wttrbar --nerd --location Tehran",
+      "exec": "wttrbar --nerd --location Azadi+square",
       "return-type": "json"
     },
     "group/traym": {
