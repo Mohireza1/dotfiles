@@ -11,7 +11,7 @@
   <Global>
     <ExtraData>
       <ExtraDataItem name="GUI/LastItemSelected" value="m=30bd383f-fcf1-4be0-81f3-0d479114844d"/>
-      <ExtraDataItem name="GUI/LastWindowPosition" value="1284,745,1269,688"/>
+      <ExtraDataItem name="GUI/LastWindowPosition" value="1284,49,1269,1384"/>
       <ExtraDataItem name="GUI/RecentFolderCD" value="/home/mohireza/Downloads/debian-13.1.0-amd64-DVD-1"/>
       <ExtraDataItem name="GUI/RecentListCD" value="/home/mohireza/Downloads/debian-13.1.0-amd64-DVD-1/debian-13.1.0-amd64-DVD-1.iso"/>
       <ExtraDataItem name="GUI/Settings/ExpertMode" value="true"/>

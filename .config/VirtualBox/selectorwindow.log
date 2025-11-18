@@ -1,23 +1,23 @@
-00:00:00.477939 VirtualBox GUI VM Selector Window 7.2.4 r170995 linux.amd64 (Oct 22 2025 16:59:14) release log
-00:00:00.477941 Log opened 2025-11-13T13:31:30.087778000Z
-00:00:00.477941 Build Type: release
-00:00:00.477947 OS Product: Linux
-00:00:00.477947 OS Release: 6.17.7-arch1-1
-00:00:00.477948 OS Version: #1 SMP PREEMPT_DYNAMIC Sun, 02 Nov 2025 17:27:22 +0000
-00:00:00.478001 DMI Product Name: ROG Strix G513RW_G513RW
-00:00:00.478013 DMI Product Version: 1.0
-00:00:00.478021 Firmware type: UEFI
-00:00:00.478424 Secure Boot: Disabled
-00:00:00.478519 Host RAM: 15237MB (14.8GB) total, 9845MB (9.6GB) available
-00:00:00.478523 Executable: /usr/lib/virtualbox/VirtualBox
-00:00:00.478523 Process ID: 36057
-00:00:00.478524 Package type: LINUX_64BITS_GENERIC (OSE)
-00:00:00.478624 Qt version: 6.10.0
-00:00:00.480961 GUI: UIMediumEnumerator: Initial medium-enumeration finished!
-00:00:00.494184 GUI: UIMediumEnumerator: Medium-enumeration started...
-00:00:01.146885 GUI: UIMediumEnumerator: Medium-enumeration finished!
-00:00:05.405924 GUI: UIInvisibleWindow::sltFallback: Move event missing. Screen: 0, work area: 1279x719 x 800x800
-00:00:05.405955 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 0 work area is actually resized to: 1279x719 x 800x800
-00:00:14.283305 GUI: UIMediumEnumerator: Medium-enumeration finished!
-00:00:15.783428 GUI: UICommon: Handling aboutToQuit request..
-00:00:16.800706 GUI: UICommon: aboutToQuit request handled!
+00:00:01.153308 VirtualBox GUI VM Selector Window 7.2.4 r170995 linux.amd64 (Oct 22 2025 16:59:14) release log
+00:00:01.153312 Log opened 2025-11-17T10:32:07.609979000Z
+00:00:01.153313 Build Type: release
+00:00:01.153317 OS Product: Linux
+00:00:01.153320 OS Release: 6.17.8-arch1-1
+00:00:01.153322 OS Version: #1 SMP PREEMPT_DYNAMIC Fri, 14 Nov 2025 06:54:20 +0000
+00:00:01.153364 DMI Product Name: ROG Strix G513RW_G513RW
+00:00:01.153390 DMI Product Version: 1.0
+00:00:01.153400 Firmware type: UEFI
+00:00:01.153634 Secure Boot: Disabled
+00:00:01.153722 Host RAM: 15237MB (14.8GB) total, 10589MB (10.3GB) available
+00:00:01.153740 Executable: /usr/lib/virtualbox/VirtualBox
+00:00:01.153741 Process ID: 46916
+00:00:01.153741 Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:01.153791 Qt version: 6.10.0
+00:00:01.156892 GUI: UIMediumEnumerator: Initial medium-enumeration finished!
+00:00:01.190470 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:02.762708 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:05.008563 GUI: UIInvisibleWindow::sltFallback: Move event missing. Screen: 0, work area: 1279x719 x 800x800
+00:00:05.008619 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 0 work area is actually resized to: 1279x719 x 800x800
+00:00:11.972165 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:01:21.545648 GUI: UICommon: Handling aboutToQuit request..
+00:01:22.100252 GUI: UICommon: aboutToQuit request handled!
