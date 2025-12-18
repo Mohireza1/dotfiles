@@ -1,0 +1,6 @@
+[soe][Crystalizer#0]
+inputGain=-0.5
+intensityBand0=5
+intensityBand1=8
+intensityBand2=11
+outputGain=-0.5

@@ -1,0 +1,6 @@
+[soe][RNNoise#0]
+enableVad=true
+release=0.1
+useStandardModel=false
+vadThres=0
+wet=-0.27

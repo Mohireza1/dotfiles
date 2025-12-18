@@ -1,0 +1,9 @@
+[soe][Limiter#0]
+alrAttack=3
+attack=0.25
+dithering=8
+gainBoost=false
+lookahead=8
+outputGain=-0.6
+release=16
+threshold=-2.000000238418579

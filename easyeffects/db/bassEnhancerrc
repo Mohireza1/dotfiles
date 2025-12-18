@@ -1,0 +1,13 @@
+[sie][BassEnhancer#0]
+amount=1.2
+blend=2
+harmonics=8.7
+scope=85
+
+[soe][BassEnhancer#0]
+amount=1.2
+blend=6
+floor=54
+floorActive=true
+harmonics=10
+scope=121

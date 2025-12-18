@@ -1,0 +1,21 @@
+[Presets]
+lastLoadedOutputPreset=GentleDynamics
+
+[StreamInputs]
+inputDevice=bluez_input.58:FC:C6:C5:62:AA
+visiblePage=pluginsPage
+
+[StreamOutputs]
+mostUsedPresets=GentleDynamics Dialogue Clarity Engine,GentleDynamics,The Hell Patrol,AAAAAAAaaaaa,AG+BE+Cry+M
+outputDevice=bluez_output.58_FC_C6_C5_62_AA.1
+plugins=filter#0,multiband_compressor#0,limiter#0,level_meter#0
+usedPresets=Bass Enhancing + Perfect EQ:10,GentleDynamics:29,AAAAAAAaaaaa:21,AG+BE+Cry+M:14,BE+Cr+Max:12,The Hell Patrol:23,GentleDynamics Dialogue Clarity Engine:30,classical-max:1,Mohi's:8
+visiblePage=pluginsPage
+visiblePlugin=filter#0
+
+[Window]
+autostartOnLogin=true
+height=1384
+lastLoadedOutputPreset=GentleDynamics
+visiblePipeWirePage=testSignalsPage
+width=1269
