@@ -16,7 +16,7 @@
 @define-color window #b4befe;
 @define-color resize #eba0ac;
 @define-color process #89b4fa;
-@define-color text #000000;
+@define-color text #cdd6f4;
 /* }}} */
 
 /* Reset all styles */
@@ -125,6 +125,7 @@
   padding-left: 10pt;
   padding-right: 10pt;
 }
+
 #waybar.main #custom-weather {
   padding-right: 3pt;
 }
@@ -455,11 +456,11 @@
 /* }}} */
 
 /* Custom tray icon */
-/* {{{ */
+
 #waybar.main #custom-trayicon {
   font-size: 11pt;
-  color: transparent;
-  /* font-weight: bold; */
+  color: white;
+  font-weight: bold;
   font-style: italic;
   background: transparent;
   padding-right: 0pt;
@@ -470,23 +471,26 @@
   background-image: url("/home/jan-aarela/.config/hypr/themes/Mocha-Power/pacman.png");
 }
 
-/* }}} */
+
 
 /* Tooltip */
 /* {{{ */
 tooltip {
-  /* background: @background; */
+  background: rgba(33, 31, 36, 0.958);
   border: 3px solid @caution;
   border-radius: 8px;
   font-weight: 500;
   font-family: "JetBrains Mono Nerd Font";
+  color: white;
 }
 
-/* #waybar.main #tray menu {
-  background: @background;
+#waybar.main #tray menu {
+  background: rgba(33, 31, 36, 0.958);
   border: 3px solid @caution;
   border-radius: 8px;
-} */
+  color: white;
+  padding: 5px 10px 10px 5px;
+}
 
 /* }}} */
 
