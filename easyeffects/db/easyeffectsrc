@@ -1,5 +1,5 @@
 [Presets]
-lastLoadedOutputPreset=Mohi's
+lastLoadedOutputPreset=GentleDynamics Dialogue Clarity Engine
 
 [Spectrum]
 spectrumShape=area
@@ -9,10 +9,10 @@ inputDevice=bluez_input.58:FC:C6:C5:62:AA
 visiblePage=pluginsPage
 
 [StreamOutputs]
-mostUsedPresets=GentleDynamics Dialogue Clarity Engine,GentleDynamics,The Hell Patrol,AAAAAAAaaaaa,AG+BE+Cry+M
+mostUsedPresets=GentleDynamics Dialogue Clarity Engine,GentleDynamics,The Hell Patrol,AAAAAAAaaaaa,Mohi's
 outputDevice=bluez_output.58_FC_C6_C5_62_AA.1
-plugins=filter#0,multiband_compressor#0,limiter#0,level_meter#0,bass_enhancer#0,crystalizer#0,deesser#0
-usedPresets=Bass Enhancing + Perfect EQ:10,GentleDynamics:31,AAAAAAAaaaaa:22,AG+BE+Cry+M:14,BE+Cr+Max:12,The Hell Patrol:25,GentleDynamics Dialogue Clarity Engine:32,classical-max:1,Mohi's:13
+plugins=expander#0,filter#0,multiband_compressor#0,compressor#1,compressor#2,deesser#0,stereo_tools#0,limiter#0,level_meter#0
+usedPresets=Bass Enhancing + Perfect EQ:10,GentleDynamics:32,AAAAAAAaaaaa:22,AG+BE+Cry+M:14,BE+Cr+Max:12,The Hell Patrol:25,GentleDynamics Dialogue Clarity Engine:34,classical-max:1,Mohi's:18
 visiblePage=pluginsPage
 visiblePlugin=filter#0
 
