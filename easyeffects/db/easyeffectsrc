@@ -1,24 +1,24 @@
 [Presets]
-lastLoadedOutputPreset=GentleDynamics Dialogue Clarity Engine
+lastLoadedOutputPreset=Mohi's
 
 [Spectrum]
 spectrumShape=area
 
 [StreamInputs]
-inputDevice=bluez_input.58:FC:C6:C5:62:AA
+inputDevice=alsa_input.pci-0000_05_00.6.analog-stereo
 visiblePage=pluginsPage
 
 [StreamOutputs]
-mostUsedPresets=GentleDynamics Dialogue Clarity Engine,GentleDynamics,The Hell Patrol,AAAAAAAaaaaa,Mohi's
-outputDevice=bluez_output.58_FC_C6_C5_62_AA.1
-plugins=expander#0,filter#0,multiband_compressor#0,compressor#1,compressor#2,deesser#0,stereo_tools#0,limiter#0,level_meter#0
-usedPresets=Bass Enhancing + Perfect EQ:10,GentleDynamics:32,AAAAAAAaaaaa:22,AG+BE+Cry+M:14,BE+Cr+Max:12,The Hell Patrol:25,GentleDynamics Dialogue Clarity Engine:34,classical-max:1,Mohi's:18
+mostUsedPresets=GentleDynamics Dialogue Clarity Engine,GentleDynamics,Mohi's,The Hell Patrol,AAAAAAAaaaaa
+outputDevice=alsa_output.pci-0000_05_00.6.analog-stereo
+plugins=filter#0,multiband_compressor#0,limiter#0,level_meter#0,bass_enhancer#0,crystalizer#0,deesser#0
+usedPresets=Bass Enhancing + Perfect EQ:11,GentleDynamics:34,AAAAAAAaaaaa:26,AG+BE+Cry+M:14,BE+Cr+Max:12,The Hell Patrol:28,GentleDynamics Dialogue Clarity Engine:52,classical-max:1,Mohi's:30
 visiblePage=pluginsPage
 visiblePlugin=filter#0
 
 [Window]
 autostartOnLogin=true
-height=688
+height=1394
 lastLoadedOutputPreset=GentleDynamics
 reducePluginsListControls=true
 visiblePipeWirePage=testSignalsPage

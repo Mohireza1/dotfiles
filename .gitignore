@@ -1,0 +1,52 @@
+# Caches and large app data
+spicetify/
+go/
+mozilla/
+spotify/
+vlc/
+haruna/
+Code
+Code - OSS/
+Code/
+qBittorrent/
+VirtualBox/
+google-chrome/
+Antigravity/
+Dadroit/
+DeltaChat/
+in.cinny.app/
+nextjs-nodejs/
+create-next-app-nodejs/
+vllm/
+
+# Machine-specific or generated
+dconf/
+pulse/
+session/
+QtProject/
+qt6ct/
+KDE/
+kdedefaults/
+fontconfig/
+ibus/
+libaccounts-glib/
+matplotlib/
+menus/
+qtvirtualkeyboard/
+systemd/
+waybar_bak/
+yay/
+
+# Tooling caches
+flutter/
+gopls/
+github-copilot/
+google-vscode-extension/
+
+# Misc
+Some Humans/
+rog/
+autostart/
+kdeconnect/
+waybar/config_bak
+waybar/config copy

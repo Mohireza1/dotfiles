@@ -1,0 +1,20 @@
+[General]
+LastUsedVersion=210800
+
+[MainWindow]
+MenuBar=Disabled
+
+[Recent Files]
+File1[$e]=$HOME/Downloads/wallpapers/wallhaven-lq7xv2_2560x1440.png
+File2[$e]=$HOME/Pictures/2026-02-07-152524_hyprshot.png
+File3[$e]=$HOME/indian.png
+File4[$e]=$HOME/Downloads/wallpapers/wallhaven-lqqve2_2560x1440.png
+File5[$e]=$HOME/Downloads/wallpapers/in-bed.png
+Name1[$e]=wallhaven-lq7xv2_2560x1440.png
+Name2[$e]=2026-02-07-152524_hyprshot.png
+Name3[$e]=indian.png
+Name4[$e]=wallhaven-lqqve2_2560x1440.png
+Name5[$e]=in-bed.png
+
+[SideBar]
+InformationSplitterSizes=208,247
