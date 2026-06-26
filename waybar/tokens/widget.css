@@ -1,0 +1,135 @@
+@import "colors.css";
+
+/*======= MODULE INDEPENDENT =======*/
+#distro-group {
+  margin: 4px 3px 0px 3px;
+  background-color: @surface_container;
+  border-radius: 20px;
+  color: @primary;
+}
+
+#custom-distro {
+  color: @primary;
+  padding: 1px 14px 1px 9px;
+}
+
+#custom-obsidian {
+  color: #cba6f7;
+  padding: 0px 10px;
+}
+
+#custom-zotero {
+  color: #f38ba8;
+  padding: 0px 10px;
+}
+
+#custom-antigravity {
+  color: #89b4fa;
+  padding: 0px 10px;
+}
+
+#custom-easyeffects {
+  color: #a6e3a1;
+  padding: 0px 10px;
+}
+
+#custom-mpv {
+  color: #f9e2af;
+  padding: 0px 10px;
+}
+
+#custom-steam {
+  color: #74c7ec;
+  padding: 0px 15px 0px 10px;
+}
+
+#power-profiles-daemon,
+#idle_inhibitor,
+#custom-agy,
+#custom-performance {
+  margin: 4px 3px 0px 3px;
+  padding: 1px 14px 1px 9px;
+  background-color: @surface_container;
+  border-radius: 20px;
+  color: @secondary_fixed_dim;
+}
+
+#language {
+  margin: 4px 3px 0px 3px;
+  padding: 1px 14px 1px 9px;
+  background-color: @surface_container;
+  border-radius: 20px;
+  color: @secondary_fixed_dim;
+}
+
+/*======= MODULE CAPSUL =======*/
+#audio,
+#connections,
+#system,
+#speed,
+#brightness,
+#storage {
+  margin: 4px 3px 0px 3px;
+  padding: 1px 5px;
+  background-color: @surface_container;
+  border-radius: 20px;
+  color: @secondary_fixed_dim;
+}
+
+#connections {
+  padding-left: 6px;
+}
+
+#bluetooth.connected {
+  color: #89b4fa;
+}
+
+#disk,
+#memory,
+#cpu,
+#temperature,
+#bluetooth {
+  margin-right: 2px;
+  padding: 0px 8px;
+}
+
+#network {
+  padding: 0px 10px 0px 4px;
+}
+
+#network.speed-down,
+#network.speed-up {
+  padding: 0px 8px;
+}
+
+#backlight {
+  margin-right: 12px;
+  margin-left: 8px;
+}
+
+#pulseaudio {
+  margin-right: 12px;
+  margin-left: 8px;
+}
+
+/*======= TRAY =======*/
+#tray-group {
+  margin: 4px 3px 0px 3px;
+  background-color: @surface_container;
+  border-radius: 20px;
+}
+
+#custom-tray-arrow {
+  padding: 1px 13px 1px 9px;
+  color: @primary;
+}
+
+#tray {
+  padding: 1px 9px;
+}
+
+#tray>.passive,
+#tray>.active,
+#tray>.needs-attention {
+  -gtk-icon-effect: none;
+}

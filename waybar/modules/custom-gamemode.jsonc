@@ -1,0 +1,7 @@
+{
+  "custom/gamemode": {
+    "format": "󰓅",
+    "tooltip-format": "Toggle Gamemode/Performance",
+    "on-click": "~/.config/hypr/gamemode.sh"
+  }
+}

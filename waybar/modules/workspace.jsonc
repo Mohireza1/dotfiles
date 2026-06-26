@@ -1,0 +1,85 @@
+{
+  "hyprland/workspaces": {
+    "format": "{icon} {windows}",
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": 5
+    },
+    "window-rewrite-default": "󰊠",
+    "window-rewrite": {
+      // --- Work ---
+      "kitty": "󰆍",
+      "konsole": "",
+      "ghostty": "",
+      "contour": "",
+      "onlyoffice": "󰏆",
+      "firefox": "",
+      "zen-alpha": "󰈹",
+      "zen": "󰈹",
+      "google-chrome": "",
+      "brave": "",
+      "code": "󰨞",
+      "antigravity": "󰨞",
+      "Antigravity": "󰨞",
+      "azahar": "",
+      "obsidian": "󰹕",
+      "mousepad": "󱓧",
+      "kate": "",
+      "okular": "",
+      "zotero": "",
+      // --- Apps ---
+      "discord": "",
+      "telegram": "",
+      "spotify": "",
+      "in.cinny.app": "󰭹",
+      "deltachat": "󰭹",
+      "org.kde.kdeconnect.app": "󰦉",
+      "org.qbittorrent.qBittorrent": "󰘿",
+      "obs": "󰑋",
+      "com.obsproject.Studio": "󰑋",
+      "hiddify": "󰖂",
+      "Hiddify": "󰖂",
+      "v2rayn": "󰖂",
+      "v2rayN": "󰖂",
+      // --- Graphics & Visual ---
+      "xdg-desktop-portal-gtk": "",
+      "thunar": "",
+      "dolphin": "",
+      "yazi": "󰇥",
+      "imv": "󰄄",
+      "swappy": "󰄄",
+      "org.gnome.FileRoller": "",
+      "ark": "",
+      "vlc": "󰕼",
+      "mpv": "󰕼",
+      "smplayer": "󰕼",
+      "haruna": "󰕼",
+      "easyeffects": "󰋋",
+      "waypaper": "󰸉",
+      "VirtualBox": "",
+      "Unity": "󰚯",
+      // --- System ---
+      "blueman-manager": "",
+      "pavucontrol": "󱕂",
+      "nm-connection-editor": "󰐻",
+      // --- Tool ---
+      "nwg-look": "󰒓",
+      "qt5ct": "󰒓",
+      "qt6ct": "󰒓",
+      "designer": "󰒓",
+      "linguist": "󰒓",
+      "assistant": "󰒓",
+      "pixeltool": "󰒓",
+      "qdbusviewer": "󰒓"
+    },
+    "format-icons": {
+      "active": "󰮯",
+      "special": "󱁂",
+      "default": "󰊠",
+      "urgent": "󰧵",
+      "empty": ""
+    },
+    "show-special": true,
+    "all-outputs": true
+  }
+}

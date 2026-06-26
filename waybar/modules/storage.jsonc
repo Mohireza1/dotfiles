@@ -1,0 +1,25 @@
+{
+  "disk": {
+    "tooltip": false,
+    "interval": 3600,
+    "path": "/",
+    "format": "󱙋",
+    "format-alt": "󱙋 <span size='11pt'>{used}</span>",
+    "states": {
+      "warning": 80,
+      "critical": 90
+    }
+  },
+  "memory": {
+    "tooltip": false,
+    "interval": 5,
+    "format": "󰍛",
+    "format-alt": "󰍛 <span size='11pt'>{percentage}%</span>",
+    "on-click": "mode",
+    "on-click-right": "ghostty -e btop",
+    "states": {
+      "warning": 75,
+      "critical": 85
+    }
+  }
+}

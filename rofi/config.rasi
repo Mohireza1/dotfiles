@@ -13,8 +13,9 @@ configuration {
 	font: "CaskaydiaCove Nerd Font 17";	
   
   /* for custom ones do Test:~/path/to/file */
-  modi: "drun,window,ssh,filebrowser";
+  modi: "drun,search:~/.config/rofi/scripts/rofi-search.py,window,ssh,filebrowser";
   display-drun: " ";
+  display-search: "  ";
   display-window: "  ";
   display-ssh: "󱘖 ";
   display-filebrowser: "  ";
@@ -89,7 +90,7 @@ element-icon {
 }
 
 listview {
-	columns: 2;
+	columns: 1;
 	lines: 9;
 	padding: 8 0;
 	fixed-height: true;

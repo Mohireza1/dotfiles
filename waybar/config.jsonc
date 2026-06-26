@@ -1,343 +1,46 @@
+/*
+ * @author Muhammad Haikal Hakim
+ * @repository https://github.com/haikal-hakim/athena
+ */
 {
   "layer": "top",
-  "position": "top",
-  "output": [
-    "*"
+  "height": 36,
+  "spacing": 6,
+  "include": [
+    "./modules/groups.jsonc",
+    "./modules/distro.jsonc",
+    "./modules/storage.jsonc",
+    "./modules/system.jsonc",
+    "./modules/custom-performance.jsonc",
+    "./modules/workspace.jsonc",
+    "./modules/custom-agy.jsonc",
+    "./modules/audio.jsonc",
+    "./modules/connections.jsonc",
+    "./modules/battery.jsonc",
+    "./modules/clock.jsonc",
+    "./modules/tray-notif.jsonc",
+    "./modules/language.jsonc",
+    "./modules/backlight.jsonc",
+    "./modules/network-speed.jsonc"
   ],
-  "reload_style_on_change": true,
   "modules-left": [
-    "clock",
-    "hyprland/language",
-    "pulseaudio",
-    "network",
-    "bluetooth",
-    "tray"
+    "group/distro-group",
+    "group/storage",
+    "group/system",
+    "group/speed"
   ],
-  "hyprland/language": {
-    "format": "{}",
-    "format-English (US)": "en",
-    "format-Persian": "fa"
-  },
   "modules-center": [
+    "custom/performance",
     "hyprland/workspaces",
-    // "custom/sep",
-    "hyprland/window"
+    "custom/agy"
   ],
   "modules-right": [
-    // "group/player",
-    // "custom/padd",
-    "group/system"
-  ],
-  "custom/sep": {
-    "format": " | ",
-    "interval": "once",
-    "tooltip": false
-  },
-  // ─── Workspaces ──────────────────────────────────────────────────────────────
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "active": "",
-      "default": "",
-      "empty": "",
-      "urgent": ""
-    },
-    "persistent-workspaces": {
-      "*": [
-        1,
-        2,
-        3,
-        4,
-        5,
-        6,
-        7
-      ]
-    },
-    "on-update": "hyprctl clients -j | jq -c 'map(select(.workspace.id == focused_workspace)) | select(length == 1)'"
-  },
-  // ─── System Modules ──────────────────────────────────────────────────────────
-  "clock": {
-    "format": "{:%H:%M | %a, %b %d}",
-    "tooltip-format": "<tt>{calendar}</tt>",
-    "calendar": {
-      "weeks-pos": "right",
-      "mode": "month",
-      "format": {
-        "months": "<span color='#cba6f7'><b>{}</b></span>",
-        "days": "<span color='#cdd6f4'><b>{}</b></span>",
-        "weeks": "<span color='#94e2d5'> W{}</span>",
-        "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-        "today": "<span color='#f5e0dc'><b><u>{}</u></b></span>"
-      }
-    },
-    "on-click": "chromium --app=https://calendar.google.com"
-  },
-  "battery": {
-    "format": "{capacity}% {icon}",
-    "format-alt": "{time} {icon}",
-    "format-charging": "{capacity}% 󰂄",
-    "format-icons": [
-      "󰁻",
-      "󰁼",
-      "󰁾",
-      "󰂀",
-      "󰂂",
-      "󰁹"
-    ],
-    "format-plugged": "{capacity}% 󰂄  ",
-    "interval": 30,
-    "states": {
-      "good": 95,
-      "warning": 30,
-      "critical": 20
-    }
-  },
-  "cpu": {
-    "interval": 5,
-    "format": "{usage}% ",
-    "states": {
-      "warning": 80,
-      "critical": 95
-    }
-  },
-  "memory": {
-    "interval": 10,
-    "format": "{percentage}% ",
-    "states": {
-      "warning": 80,
-      "critical": 95
-    },
-    "tooltip": "{}",
-    "tooltip-format": "{used}/{total} GiB",
-    "on-click": "ghostty -e btop"
-  },
-  "disk": {
-    "interval": 16,
-    "format": "{percentage_used}% ",
-    "tooltip": "{}",
-    "tooltip-format": "Free {free}",
-    "on-click": "qdirstat",
-    "states": {
-      "warning": 85,
-      "critical": 95
-    }
-  },
-  "temperature": {
-    "critical-threshold": 90,
-    "interval": 4,
-    "format": "{temperatureC}° {icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "tooltip": false
-  },
-  "backlight": {
-    "format": "{percent}% {icon}",
-    "format-icons": [
-      "󰃞",
-      "󰃟",
-      "󰃠"
-    ],
-    "tooltip": false
-  },
-  "tray": {
-    "icon-size": 16,
-    "spacing": 10
-  },
-  "pulseaudio": {
-    "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "default": [
-        "",
-        "",
-        ""
-      ],
-      "headphone": "",
-      "headset": ""
-    },
-    "on-click": "pavucontrol",
-    "scroll-step": 5
-  },
-  "group/system": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/screenshot",
-      "custom/colorpicker",
-      "memory",
-      "cpu",
-      "temperature",
-      "backlight",
-      "custom/weather",
-      "battery",
-      "custom/notification"
-    ]
-  },
-  "group/player": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/playerprev",
-      "custom/playpause",
-      "custom/playernext",
-      "mpris",
-      "custom/playerprogress"
-    ]
-  },
-  "custom/playpause": {
-    "exec": "playerctl status 2>/dev/null | grep -q Playing && echo '{\"text\": \"\", \"class\": \"playing\"}' || echo '{\"text\": \"\", \"class\": \"paused\"}'",
-    "format": "{}",
-    "return-type": "json",
-    "on-click": "playerctl play-pause",
-    "interval": 1
-  },
-  "mpris": {
-    "format": "<span>{title} - {artist}</span>",
-    "format-paused": "<span>{title} - {artist}</span>",
-    "max-length": 40,
-    "on-click": "playerctl play-pause"
-  },
-  "custom/playerprogress": {
-    "exec": "/home/mohireza/.config/waybar/playerctl-progress.sh",
-    "return-type": "json",
-    "format": "{}",
-    "on-click": "playerctl play-pause",
-    "on-scroll-up": "playerctl position 5+",
-    "on-scroll-down": "playerctl position 5-"
-  },
-  "custom/playerprev": {
-    "format": "󰒮",
-    "on-click": "playerctl previous",
-    "tooltip": false
-  },
-  "custom/playernext": {
-    "format": "󰒭",
-    "on-click": "playerctl next",
-    "tooltip": false
-  },
-  // ─── Network & Bluetooth ─────────────────────────────────────────────────────
-  "network": {
-    "interval": 20,
-    "format": "󱘖 Offline",
-    "format-wifi": "{icon} {bandwidthDownBytes}",
-    "format-ethernet": "󰈀 {bandwidthDownBytes}",
-    "min-length": 11,
-    "tooltip": "{}",
-    "tooltip-format-wifi": "{ifname}\n{essid}\n{signalStrength}% \n{frequency} GHz\n󰇚 {bandwidthDownBits}\n󰕒 {bandwidthUpBits}",
-    "tooltip-format-ethernet": "{ifname}\n󰇚 {bandwidthDownBits} \n󰕒 {bandwidthUpBits}",
-    "on-click": "nm-connection-editor",
-    "format-icons": [
-      "󰤫",
-      "󰤟",
-      "󰤢",
-      "󰤥",
-      "󰤨"
-    ],
-    "states": {
-      "normal": 25
-    }
-  },
-  "bluetooth": {
-    "format": "󰂲",
-    "format-on": "{icon}",
-    "format-off": "{icon}",
-    "format-connected": "{icon}",
-    "format-icons": {
-      "on": "󰂯",
-      "off": "󰂲",
-      "connected": "󰂱"
-    },
-    "on-click": "blueman-manager",
-    "tooltip-format-connected": "{device_enumerate}"
-  },
-  // ─── Power ───────────────────────────────────────────────────────────────────
-  "custom/power": {
-    "format": " {}",
-    "interval": 86400,
-    "on-click": "wlogout",
-    "rotate": 0,
-    "tooltip": false
-  },
-  // ─── Notifications ───────────────────────────────────────────────────────────
-  "custom/notification": {
-    "escape": true,
-    "exec": "swaync-client -swb",
-    "exec-if": "which swaync-client",
-    "format": "{icon}",
-    "format-icons": {
-      "dnd-inhibited-none": "<span foreground='#ea6962'></span>",
-      "dnd-inhibited-notification": "<span foreground='#ea6962'></span>",
-      "dnd-none": "<span foreground='#ea6962'></span>",
-      "dnd-notification": "<span foreground='#ea6962'></span>",
-      "inhibited-none": "",
-      "inhibited-notification": "",
-      "none": "",
-      "notification": ""
-    },
-    "on-click": "swaync-client -t -sw",
-    "on-click-right": "swaync-client -d -sw",
-    "return-type": "json",
-    "tooltip": false
-  },
-  // ─── Custom Tools ────────────────────────────────────────────────────────────
-  "custom/screenshot": {
-    "format": "󰄀",
-    "on-click": "bash -c $HOME/.config/scripts/snapshot.sh",
-    "tooltip": false
-  },
-  "custom/colorpicker": {
-    "format": "󰏘",
-    "on-click": "sleep 0.5 && hyprpicker | wl-copy",
-    "tooltip": false
-  },
-  // ─── Padding Modules ─────────────────────────────────────────────────────────
-  "custom/l_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false
-  },
-  "custom/r_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false
-  },
-  "custom/sl_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false
-  },
-  "custom/sr_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false
-  },
-  "custom/rl_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false
-  },
-  "custom/rr_end": {
-    "format": " ",
-    "interval": "once",
-    "tooltip": false
-  },
-  "custom/padd": {
-    "format": "  ",
-    "interval": "once",
-    "tooltip": false
-  },
-  "hyprland/window": {
-    "format": "{}"
-  },
-  "custom/weather": {
-    "format": "{}°",
-    "tooltip": true,
-    "interval": 600,
-    "exec": "wttrbar --nerd --location Azadi+square",
-    "return-type": "json"
-  }
+    "group/audio",
+    "group/connections",
+    "hyprland/language",
+    "group/brightness",
+    "battery",
+    "clock",
+    "group/tray-group"
+  ]
 }

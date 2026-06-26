@@ -1,0 +1,10 @@
+{
+  "network#speed-down": {
+    "interval": 3,
+    "format": "⇣ {bandwidthDownBytes}"
+  },
+  "network#speed-up": {
+    "interval": 3,
+    "format": "⇡ {bandwidthUpBytes}"
+  }
+}

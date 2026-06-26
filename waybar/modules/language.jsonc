@@ -1,0 +1,10 @@
+{
+  "hyprland/language": {
+    "format": "  {}",
+    "format-en": "EN",
+    "format-ir": "FA",
+    "format-fa": "FA",
+    "tooltip": true,
+    "tooltip-format": "{long}"
+  }
+}

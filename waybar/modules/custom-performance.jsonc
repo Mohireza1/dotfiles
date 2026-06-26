@@ -1,0 +1,10 @@
+{
+  "custom/performance": {
+    "exec": "~/.config/hypr/performance_mode.sh",
+    "interval": 2,
+    "return-type": "json",
+    "format": "{}",
+    "on-click": "~/.config/hypr/performance_mode.sh toggle",
+    "signal": 8
+  }
+}
