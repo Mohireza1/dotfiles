@@ -1,8 +1,0 @@
-{
-    "SEARCH_ENGINE": "google",
-    "BROWSER": "xdg-open",
-    "TERMINAL": [
-        "gnome-terminal",
-        "--"
-    ]
-}

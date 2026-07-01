@@ -1,52 +1,41 @@
-# Caches and large app data
-spicetify/
-go/
-mozilla/
-spotify/
-vlc/
-haruna/
-Code
-Code - OSS/
-Code/
-qBittorrent/
-VirtualBox/
-google-chrome/
-Antigravity/
-Dadroit/
-DeltaChat/
-in.cinny.app/
-nextjs-nodejs/
-create-next-app-nodejs/
-vllm/
+# Ignore everything in the directory by default
+/*
 
-# Machine-specific or generated
-dconf/
-pulse/
-session/
-QtProject/
-qt6ct/
-KDE/
-kdedefaults/
-fontconfig/
-ibus/
-libaccounts-glib/
-matplotlib/
-menus/
-qtvirtualkeyboard/
-systemd/
-waybar_bak/
-yay/
+# 1. Un-ignore the .gitignore itself
+!.gitignore
 
-# Tooling caches
-flutter/
-gopls/
-github-copilot/
-google-vscode-extension/
+# 2. Window Manager & Desktop Environment
+!/hypr/
+!/waybar/
+!/rofi/
+!/wofi/
+!/swaync/
+!/wlogout/
+!/hyprpanel/
 
-# Misc
-Some Humans/
-rog/
-autostart/
-kdeconnect/
-waybar/config_bak
-waybar/config copy
+# 3. Terminals & Editors
+!/kitty/
+!/ghostty/
+!/nvim/
+!/tmux/
+
+# 4. System Monitors & CLI Tools
+!/btop/
+!/htop/
+!/ranger/
+!/lazygit/
+!/neofetch/
+
+# 5. Utilities
+!/waypaper/
+!/easyeffects/
+!/solaar/
+!/redshift/
+!/obs-studio/
+
+# 6. (Optional) Ignore specific large files/folders inside the whitelisted ones
+/obs-studio/logs/
+/obs-studio/profiler_data/
+/waybar/waybar_bak/
+/waybar/config_bak
+/waybar/config copy

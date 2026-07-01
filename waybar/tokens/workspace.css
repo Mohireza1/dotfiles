@@ -42,8 +42,15 @@
   color: @outline_variant;
 }
 
+@keyframes blink_urgent {
+  0% { color: #ffb300; }
+  50% { color: @tertiary; }
+  100% { color: #ffb300; }
+}
+
 #workspaces button.urgent {
-  color: @error_container;
+  color: #ffb300;
+  animation: blink_urgent 1s ease-in-out infinite;
 }
 
 #workspaces button label:first-child {

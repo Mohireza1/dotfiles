@@ -1,5 +1,0 @@
-[Libinput][1267][12699][ASUE120A:00 04F3:319B Touchpad]
-Enabled=true
-
-[Mouse]
-X11LibInputXAccelProfileFlat=true

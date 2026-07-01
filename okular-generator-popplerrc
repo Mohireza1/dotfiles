@@ -1,5 +1,0 @@
-[General]
-EnhanceThinLines=Solid
-
-[Signatures]
-SignatureBackend=NSS

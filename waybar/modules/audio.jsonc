@@ -1,7 +1,7 @@
 {
   "pulseaudio": {
     "format": "{icon}",
-    "format-muted": "",
+    "format-muted": "󰝟",
     "format-bluetooth": "󰥰",
     "format-bluetooth-muted": "󰂲",
     "format-icons": {
@@ -9,12 +9,30 @@
       "headset": "󰋋",
       "hands-free": "󰋋",
       "default": [
-        "",
-        "",
-        ""
+        "󰖁",
+        "󰕿",
+        "󰕿",
+        "󰕿",
+        "󰕿",
+        "󰕿",
+        "󰕿",
+        "󰖀",
+        "󰖀",
+        "󰖀",
+        "󰖀",
+        "󰖀",
+        "󰖀",
+        "󰕾",
+        "󰕾",
+        "󰕾",
+        "󰕾",
+        "󰕾",
+        "󰕾",
+        "󰕾"
       ]
     },
     "on-click": "pavucontrol",
+    "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip-format": "Output: {volume}%"
   },
   "pulseaudio#microphone": {

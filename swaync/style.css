@@ -1,12 +1,13 @@
-@define-color cc-bg #32302f;
-@define-color noti-border-color #32302f;
-@define-color noti-bg #3c3836;
-@define-color noti-bg-darker #3c3836;
-@define-color noti-bg-hover rgb(27, 27, 43);
-@define-color noti-bg-focus rgba(27, 27, 27, 0.6);
-@define-color text-color #f9f5d7;
-@define-color text-color-disabled #bdae93;
-@define-color bg-selected #fabd2f;
+@import url("/home/mohireza/.config/waybar/tokens/colors.css");
+@define-color cc-bg @surface_container_low;
+@define-color noti-border-color @surface_container_low;
+@define-color noti-bg @surface_container;
+@define-color noti-bg-darker @surface_container;
+@define-color noti-bg-hover @surface_container_high;
+@define-color noti-bg-focus alpha(@surface_container_high, 0.6);
+@define-color text-color @on_surface;
+@define-color text-color-disabled @outline;
+@define-color bg-selected @primary;
  
 * {
     font-family: JetBrainsMono NFP;
@@ -14,7 +15,6 @@
 	font-size: 14px
 }
  
-.control-center .notification-row:focus,
 .control-center .notification-row:hover {
     opacity: 1;
     background: @noti-bg-darker
@@ -33,14 +33,14 @@
  
 .notification-content {
     background: @cc-bg;
-    padding: 7px;
+    padding: 11px;
     border-radius: 0px;
-    border: 2px solid #85796f;
+    border: 2px solid @outline_variant;
     margin: 0;
 }
  
 .close-button {
-    background: #d79921;
+    background: @primary;
     color: @cc-bg;
     text-shadow: none;
     padding: 0;
@@ -51,45 +51,45 @@
  
 .close-button:hover {
     box-shadow: none;
-    background: #fabd2f;
+    background: @primary;
     transition: all .15s ease-in-out;
     border: none
 }
  
 .notification-action {
-    color: #ebdbb2;
-    border: 2px solid #85796f;
+    color: @on_surface;
+    border: 2px solid @outline_variant;
     border-top: none;
     border-radius: 0px;
-    background: #32302F;
+    background: @surface_container_low;
 }
  
 .notification-default-action:hover,
 .notification-action:hover {
-    color: #ebdbb2;
-    background: #32302F;
+    color: @on_surface;
+    background: @surface_container_low;
 }
  
 .summary {
 	padding-top: 7px;
     font-size: 13px;
-    color: #ebdbb2;
+    color: @on_surface;
 }
  
 .time {
     font-size: 11px;
-    color: #d79921;
+    color: @primary;
     margin-right: 24px
 }
  
 .body {
     font-size: 12px;
-    color: #ebdbb2;
+    color: @on_surface;
 }
  
 .control-center {
     background: @cc-bg;
-    border: 2px solid #85796f;
+    border: 2px solid @outline_variant;
     border-radius: 0px;
 }
  
@@ -104,13 +104,23 @@
 .floating-notifications {
     background: transparent
 }
+
+.floating-notifications .summary,
+.floating-notifications .summary * {
+    font-size: 20px;
+}
+
+.floating-notifications .body,
+.floating-notifications .body * {
+    font-size: 18px;
+}
  
 .blank-window {
-    background: alpha(black, 0.1)
+    background: transparent;
 }
  
 .widget-title {
-    color: #f9f5d7;
+    color: @on_surface;
     background: @noti-bg-darker;
     padding: 5px 10px;
     margin: 10px 10px 5px 10px;
@@ -128,7 +138,7 @@
 }
  
 .widget-title>button:hover {
-    background: #d79921;
+    background: @primary;
     color: @cc-bg;
 }
  
@@ -138,17 +148,17 @@
     margin: 5px 10px 10px 10px;
     border-radius: 5px;
     font-size: large;
-    color: #f2e5bc;
+    color: @on_surface;
 }
  
 .widget-dnd>switch {
     border-radius: 4px;
-    background: #665c54;
+    background: @surface_variant;
 }
  
 .widget-dnd>switch:checked {
-    background: #d79921;
-    border: 1px solid #d79921;
+    background: @primary;
+    border: 1px solid @primary;
 }
  
 .widget-dnd>switch slider {
@@ -212,7 +222,7 @@
 }
  
 .widget-buttons-grid>flowbox>flowboxchild>button:hover {
-    background: #d79921;
+    background: @primary;
     color: @cc-bg;
 }
  
