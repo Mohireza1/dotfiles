@@ -1,10 +1,8 @@
 [soe][Deesser#0]
-detection=1
 f1Freq=8000
 f2Freq=6800
 f2Level=4.5
 f2Q=4
 laxity=10
-mode=1
 ratio=1
 threshold=-26

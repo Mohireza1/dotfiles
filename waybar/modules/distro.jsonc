@@ -13,9 +13,9 @@
     "on-click": "zotero",
     "tooltip": false
   },
-  "custom/antigravity": {
-    "format": "󰨞",
-    "on-click": "antigravity-ide",
+  "custom/v2rayn": {
+    "format": "󰢹",
+    "on-click": "/opt/v2rayn-bin/v2rayN",
     "tooltip": false
   },
   "custom/easyeffects": {

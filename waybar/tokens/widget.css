@@ -23,7 +23,7 @@
   padding: 0px 10px;
 }
 
-#custom-antigravity {
+#custom-v2rayn {
   color: #89b4fa;
   padding: 0px 10px;
 }
@@ -41,6 +41,17 @@
 #custom-steam {
   color: #74c7ec;
   padding: 0px 15px 0px 10px;
+}
+
+#custom-distro:hover,
+#custom-obsidian:hover,
+#custom-zotero:hover,
+#custom-v2rayn:hover,
+#custom-easyeffects:hover,
+#custom-mpv:hover,
+#custom-steam:hover {
+  background-color: @surface_bright;
+  border-radius: 20px;
 }
 
 #power-profiles-daemon,

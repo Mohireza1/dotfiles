@@ -51,7 +51,7 @@
 # Ghostty Clean Starter Config (2026)
 
 # === Appearance ===
-theme = Catppuccin Mocha
+theme = noctalia
 
 font-family = JetBrainsMono Nerd Font
 font-size = 16

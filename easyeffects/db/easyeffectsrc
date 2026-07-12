@@ -1,8 +1,5 @@
-[EffectsPipelines]
-bypass=true
-
 [Presets]
-lastLoadedOutputPreset=Mohi's
+lastLoadedOutputPreset=GentleDynamics Dialogue Clarity Engine
 
 [Spectrum]
 spectrumShape=area
@@ -14,17 +11,17 @@ visiblePage=pluginsPage
 [StreamOutputs]
 mostUsedPresets=GentleDynamics Dialogue Clarity Engine,GentleDynamics,Mohi's,The Hell Patrol,AAAAAAAaaaaa
 outputDevice=bluez_output.58_FC_C6_C5_62_AA.1
-plugins=filter#0,multiband_compressor#0,limiter#0,level_meter#0,bass_enhancer#0,crystalizer#0,deesser#0
-usedPresets=Bass Enhancing + Perfect EQ:11,GentleDynamics:35,AAAAAAAaaaaa:26,AG+BE+Cry+M:14,BE+Cr+Max:12,The Hell Patrol:29,GentleDynamics Dialogue Clarity Engine:54,classical-max:1,Mohi's:32
+plugins=expander#0,filter#0,multiband_compressor#0,compressor#1,compressor#2,deesser#0,stereo_tools#0,limiter#0,level_meter#0
+usedPresets=Bass Enhancing + Perfect EQ:11,GentleDynamics:35,AAAAAAAaaaaa:26,AG+BE+Cry+M:14,BE+Cr+Max:12,The Hell Patrol:29,GentleDynamics Dialogue Clarity Engine:56,classical-max:1,Mohi's:33
 visiblePage=pluginsPage
-visiblePlugin=autogain#0
+visiblePlugin=filter#0
 
 [Window]
 autostartOnLogin=true
-height=1390
+height=694
 lastLoadedOutputPreset=GentleDynamics
 reducePluginsListControls=true
 visiblePipeWirePage=testSignalsPage
-width=2546
+width=1269
 xdgGlobalShortcuts=true
 xdgGlobalShortcutsBound=true

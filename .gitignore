@@ -6,6 +6,7 @@
 
 # 2. Window Manager & Desktop Environment
 !/hypr/
+!/noctalia/
 !/waybar/
 !/rofi/
 !/wofi/

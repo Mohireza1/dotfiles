@@ -1,7 +1,7 @@
 {
   "custom/agy": {
     "format": "󰧑",
-    "tooltip-format": "Open Agy (Floating)",
-    "on-click": "~/.config/hypr/floating-agy.sh"
+    "tooltip-format": "Open Antigravity",
+    "on-click": "antigravity"
   }
 }
