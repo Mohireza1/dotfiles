@@ -78,6 +78,6 @@ keybind = ctrl+shift+s=new_split:down
 keybind = ctrl+shift+w=close_surface
 keybind = ctrl+shift+,=reload_config
 
-keybind = global:cmd+grave_accent=toggle_quick_terminal
+keybind = global:cmd+h=toggle_quick_terminal
 quick-terminal-position = top
 quick-terminal-animation-duration = 0.15

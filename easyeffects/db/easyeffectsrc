@@ -18,10 +18,11 @@ visiblePlugin=filter#0
 
 [Window]
 autostartOnLogin=true
-height=693
+height=1393
 lastLoadedOutputPreset=GentleDynamics
+noWindowAfterStarting=true
 reducePluginsListControls=true
 visiblePipeWirePage=testSignalsPage
-width=1269
+width=2546
 xdgGlobalShortcuts=true
 xdgGlobalShortcutsBound=true

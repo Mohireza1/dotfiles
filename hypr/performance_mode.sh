@@ -1,40 +1,82 @@
 #!/usr/bin/env bash
+#
+# performance_mode.sh — Waybar module + toggle for ASUS power profiles
+#
+#   Usage:  performance_mode.sh          → JSON for Waybar
+#           performance_mode.sh toggle   → cycle to next profile & notify
+#           performance_mode.sh notify   → just read current profile & notify
+#                                          (use with XF86Launch4 since rog-daemon
+#                                           already handles the hardware key)
 
-# If "toggle" is passed, cycle the profile and notify
-if [[ "$1" == "toggle" ]]; then
-    CURRENT=$(rog-profile --get 2>/dev/null | awk '{print $NF}')
-    
-    if [[ "$CURRENT" == "Quiet" ]]; then
-        NEXT="Balanced"
-    elif [[ "$CURRENT" == "Balanced" ]]; then
-        NEXT="Performance"
-    else
-        NEXT="Quiet"
-    fi
-    
-    rog-profile --set "$NEXT" >/dev/null 2>&1
-    notify-send -t 2000 -h string:x-canonical-private-synchronous:power_profile "Power Profile" "Switched to $NEXT"
-    
+set -euo pipefail
+
+get_profile() {
+    rog-profile --get 2>/dev/null | awk '{print $NF}'
+}
+
+icon_for() {
+    case "$1" in
+        Performance) echo "󰓅" ;;
+        Balanced)    echo "󰾅" ;;
+        Quiet)       echo "󰌪" ;;
+        *)           echo "" ;;
+    esac
+}
+
+class_for() {
+    case "$1" in
+        Performance) echo "performance" ;;
+        Balanced)    echo "balanced"    ;;
+        Quiet)       echo "quiet"       ;;
+        *)           echo "unknown"     ;;
+    esac
+}
+
+# Map rog-profile names → D-Bus names used by noctalia/tuned-ppd
+dbus_name() {
+    case "$1" in
+        quiet)       echo "power-saver"  ;;
+        balanced)    echo "balanced"     ;;
+        performance) echo "performance"  ;;
+        *)           echo "$1"           ;;
+    esac
+}
+
+# --- Toggle mode: cycle profile via noctalia (emits D-Bus signal) ----------
+if [[ "${1:-}" == "toggle" ]]; then
+    current=$(get_profile)
+    case "$current" in
+        Quiet)       next="balanced"    ;;
+        Balanced)    next="performance" ;;
+        *)           next="quiet"       ;;
+    esac
+    noctalia msg power-set "$(dbus_name "$next")" >/dev/null 2>&1
+    sleep 0.1
+    profile=$(get_profile)
+    # notify-send -t 2000 \
+    #     -h string:x-canonical-private-synchronous:power_profile \
+    #     "$(icon_for "$profile")  Power Profile" "$profile"
+    pkill -RTMIN+8 waybar || true
     exit 0
 fi
 
-# Otherwise, just output JSON for Waybar
-STATUS=$(rog-profile --get 2>/dev/null)
-# STATUS looks like: "Current profile is Performance"
-PROFILE=$(echo "$STATUS" | awk '{print $NF}')
-
-if [[ "$PROFILE" == "Performance" ]]; then
-    ICON="󰓅"
-    CLASS="performance"
-elif [[ "$PROFILE" == "Balanced" ]]; then
-    ICON=""
-    CLASS="balanced"
-elif [[ "$PROFILE" == "Quiet" ]]; then
-    ICON=""
-    CLASS="quiet"
-else
-    ICON=""
-    CLASS="default"
+# --- Notify mode: rog-daemon already switched, re-sync via D-Bus ----------
+if [[ "${1:-}" == "notify" ]]; then
+    sleep 0.2
+    profile=$(get_profile)
+    # Re-set through D-Bus so noctalia picks up the change
+    noctalia msg power-set "$(dbus_name "$(echo "$profile" | tr '[:upper:]' '[:lower:]')")" >/dev/null 2>&1
+    # notify-send -t 2000 \
+    #     -h string:x-canonical-private-synchronous:power_profile \
+    #     "$(icon_for "$profile")  Power Profile" "$profile"
+    pkill -RTMIN+8 waybar || true
+    exit 0
 fi
 
-echo "{\"text\": \"$ICON\", \"tooltip\": \"Power Profile: $PROFILE\", \"class\": \"$CLASS\"}"
+# --- Waybar JSON output ----------------------------------------------------
+profile=$(get_profile)
+icon=$(icon_for "$profile")
+class=$(class_for "$profile")
+
+printf '{"text": "%s", "tooltip": "Power Profile: %s", "class": "%s"}\n' \
+    "$icon" "$profile" "$class"
