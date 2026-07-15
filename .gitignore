@@ -1,9 +1,10 @@
 # Ignore everything in the directory by default
 /*
 
-# 1. Un-ignore the .gitignore itself
+# 1. Base files to un-ignore
 !.gitignore
-
+!.zshrc
+!.p10k.zsh
 # 2. Window Manager & Desktop Environment
 !/hypr/
 !/noctalia/
