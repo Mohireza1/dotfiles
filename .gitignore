@@ -7,8 +7,6 @@
 # 2. Window Manager & Desktop Environment
 !/hypr/
 !/noctalia/
-!/rofi/
-!/wofi/
 !/hyprpanel/
 
 # 3. Terminals & Editors
