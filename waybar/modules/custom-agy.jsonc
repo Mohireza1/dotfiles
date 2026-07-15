@@ -1,7 +1,0 @@
-{
-  "custom/agy": {
-    "format": "󰧑",
-    "tooltip-format": "Open Antigravity",
-    "on-click": "antigravity"
-  }
-}

@@ -7,11 +7,8 @@
 # 2. Window Manager & Desktop Environment
 !/hypr/
 !/noctalia/
-!/waybar/
 !/rofi/
 !/wofi/
-!/swaync/
-!/wlogout/
 !/hyprpanel/
 
 # 3. Terminals & Editors
@@ -28,7 +25,6 @@
 !/neofetch/
 
 # 5. Utilities
-!/waypaper/
 !/easyeffects/
 !/solaar/
 !/redshift/
@@ -37,6 +33,3 @@
 # 6. (Optional) Ignore specific large files/folders inside the whitelisted ones
 /obs-studio/logs/
 /obs-studio/profiler_data/
-/waybar/waybar_bak/
-/waybar/config_bak
-/waybar/config copy
