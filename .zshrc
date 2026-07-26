@@ -164,3 +164,5 @@ export PATH="/home/mohireza/.gapcode/bin:$PATH"
 eval "$(zoxide init zsh)"
 
 
+
+export PATH=$PATH:/home/mohireza/.spicetify
