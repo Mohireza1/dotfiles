@@ -1,5 +1,5 @@
 [Presets]
-lastLoadedOutputPreset=Mohi's
+lastLoadedOutputPreset=GentleDynamics Dialogue Clarity Engine
 
 [Spectrum]
 spectrumShape=area
@@ -9,10 +9,10 @@ inputDevice=alsa_input.pci-0000_05_00.6.analog-stereo
 visiblePage=pluginsPage
 
 [StreamOutputs]
-mostUsedPresets=GentleDynamics Dialogue Clarity Engine,GentleDynamics,Mohi's,The Hell Patrol,AAAAAAAaaaaa
+mostUsedPresets=GentleDynamics Dialogue Clarity Engine,Mohi's,GentleDynamics,The Hell Patrol,AAAAAAAaaaaa
 outputDevice=alsa_output.pci-0000_05_00.6.analog-stereo
 plugins=expander#0,filter#0,multiband_compressor#0,compressor#1,compressor#2,deesser#0,stereo_tools#0,limiter#0,level_meter#0
-usedPresets=Bass Enhancing + Perfect EQ:11,GentleDynamics:35,AAAAAAAaaaaa:26,AG+BE+Cry+M:14,BE+Cr+Max:12,The Hell Patrol:29,GentleDynamics Dialogue Clarity Engine:57,classical-max:1,Mohi's:34
+usedPresets=Bass Enhancing + Perfect EQ:14,GentleDynamics:35,AAAAAAAaaaaa:30,AG+BE+Cry+M:16,BE+Cr+Max:13,The Hell Patrol:31,GentleDynamics Dialogue Clarity Engine:61,classical-max:2,Mohi's:41
 visiblePage=pluginsPage
 visiblePlugin=filter#0
 
@@ -23,6 +23,6 @@ lastLoadedOutputPreset=GentleDynamics
 noWindowAfterStarting=true
 reducePluginsListControls=true
 visiblePipeWirePage=testSignalsPage
-width=2546
+width=1269
 xdgGlobalShortcuts=true
 xdgGlobalShortcutsBound=true
