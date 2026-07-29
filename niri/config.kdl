@@ -1,0 +1,363 @@
+// ══════════════════════════════════════════════════════════════════════════════
+// Niri Configuration — mohireza
+// Docs: https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
+// ══════════════════════════════════════════════════════════════════════════════
+
+
+// ─── GENERAL ──────────────────────────────────────────────────────────────────
+prefer-no-csd
+
+
+gestures {
+    hot-corners {
+        top-left
+    }
+}
+hotkey-overlay {
+    skip-at-startup
+}
+
+input {
+    focus-follows-mouse max-scroll-amount="49%"
+    warp-mouse-to-focus
+
+    keyboard {
+        numlock
+
+        xkb {
+            layout "us,ir"
+            options "grp:alt_shift_toggle"
+        }
+        repeat-delay 400
+    }
+
+    touchpad {
+        tap
+    }
+    mouse
+}
+
+// ─── THEME ────────────────────────────────────────────────────────────────────
+
+include "noctalia.kdl"
+
+
+// ─── OUTPUTS ──────────────────────────────────────────────────────────────────
+
+output "eDP-2" {
+    mode "2560x1440@165.008"
+    scale 1.0
+    position x=0 y=0
+
+    variable-refresh-rate
+
+    focus-at-startup
+}
+
+output "HDMI-A-1" {
+    mode "1920x1080@59.940"
+    scale 1.0
+    position x=2560 y=0
+}
+
+
+// ─── GPU SELECTION ────────────────────────────────────────────────────────────
+// AMD iGPU = renderD129 (card2, PCI 0000:05:00.0) — compositor
+// NVIDIA   = renderD128 (card1, PCI 0000:01:00.0) — ignored, stays suspended
+
+debug {
+    render-drm-device "/dev/dri/renderD129"
+    ignore-drm-device "/dev/dri/renderD128"
+}
+
+
+// ─── WINDOW RULES ─────────────────────────────────────────────────────────────
+window-rule {
+    geometry-corner-radius 12
+    clip-to-geometry true
+    draw-border-with-background false
+}
+
+
+
+window-rule {
+    opacity 0.85
+    background-effect { blur true; }
+}
+
+window-rule {
+    match is-active=true
+    opacity 0.90
+    background-effect { blur true; }
+}
+
+window-rule {
+    match app-id="^com\\.mitchellh\\.ghostty\\.scratchpad$"
+    open-floating true
+    default-column-width { fixed 2000; }
+    default-window-height { fixed 1000; }
+}
+
+window-rule {
+    match app-id="^v2rayN$"
+    open-floating true
+    default-column-width { fixed 800; }
+    default-window-height { fixed 600; }
+}
+
+// ─── BLUR CONFIGURATION ───────────────────────────────────────────────────────
+blur {
+    // You can adjust these values to control the strength of the blur
+    passes 2
+    offset 5.0
+}
+
+// ─── LAYOUT & AESTHETICS ──────────────────────────────────────────────────────
+layout {
+    gaps 7
+    center-focused-column "never"
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+    default-column-width { proportion 0.5; }
+
+    focus-ring {
+        width 2
+    }
+    border {
+        width 0
+    }
+    
+    shadow {
+        on
+        softness 30
+        spread 5
+        offset x=0 y=5
+    }
+
+    // struts {
+    //     left 5
+    //     right 5
+    //     top 5
+    //     bottom 5
+    // }
+}
+
+animations {
+    slowdown 1.0
+    workspace-switch {
+        spring damping-ratio=0.9 stiffness=1000 epsilon=0.0001
+    }
+    window-open {
+ curve "cubic-bezier" 0.25 0.1 0.25 1.0 ;
+
+
+
+
+
+
+
+
+
+        duration-ms 300
+    }
+    window-close {
+        spring damping-ratio=0.8 stiffness=1000 epsilon=0.0001
+    }
+    horizontal-view-movement {
+        spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
+    }
+}
+
+
+// ─── ENVIRONMENT ──────────────────────────────────────────────────────────────
+
+environment {
+    DISPLAY ":0"               // xwayland-satellite (systemd want)
+    XDG_SESSION_TYPE "wayland"          // portals: xdg-desktop-portal-gnome/gtk
+    XCURSOR_THEME "Bibata-Modern-Classic"
+    XCURSOR_SIZE "24"
+    QT_QPA_PLATFORMTHEME "kde"
+    LIBVA_DRIVER_NAME "radeonsi"     // VA-API on AMD iGPU
+    __EGL_VENDOR_LIBRARY_FILENAMES "/usr/share/glvnd/egl_vendor.d/50_mesa.json"
+    __GLX_VENDOR_LIBRARY_NAME "mesa"
+}
+
+cursor {
+    xcursor-theme "Bibata-Modern-Classic"
+    xcursor-size 24
+}
+
+
+// ─── AUTOSTART ────────────────────────────────────────────────────────────────
+// Note: xwayland-satellite and dms are started via systemd (niri.service.wants)
+
+spawn-at-startup "nm-applet"
+spawn-at-startup "powerkit"
+spawn-at-startup "gnome-keyring-daemon" "--start" "--components=secrets"
+spawn-at-startup "/usr/lib/polkit-kde-authentication-agent-1"
+spawn-at-startup "noctalia"
+spawn-at-startup "easyeffects"
+spawn-at-startup "/home/mohireza/Documents/toggle_cpu_boost.sh"
+spawn-at-startup "/usr/bin/kdeconnectd"
+spawn-at-startup "kdeconnect-indicator"
+
+
+
+
+// ─── WORKSPACES & SCRATCHPADS ─────────────────────────────────────────────────
+// Define standard workspaces first so "stash" does not default to Workspace 1!
+workspace "1"
+workspace "stash"
+
+
+// ─── KEYBINDINGS ──────────────────────────────────────────────────────────────
+
+// ─── LAYER RULES (BLUR) ───────────────────────────────────────────────────────
+// Enable background blur for Noctalia panels/docks (excluding wallpaper)
+layer-rule {
+    match namespace="^noctalia-(bar|launcher|osd).*$"
+    background-effect {
+        blur true
+    }
+}
+
+binds {
+    
+    
+
+    // — Overview (niri's expose/mission-control) ——————————————————————————————
+    
+    // — Apps ——————————————————————————————————————————————————————————————————
+    Super+Q { spawn "ghostty"; }
+    Super+E { spawn "dolphin"; }
+    Super+R { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Super+T { spawn "telegram-desktop"; }
+    Super+A { spawn "zen-browser"; }
+    Super+Z { spawn "code"; }
+    Super+Y { spawn "ghostty" "-e" "nvim" "/home/mohireza/.config/niri/config.kdl"; }
+
+    // — Noctalia IPC ——————————————————————————————————————————————————————————
+    Super+V { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Super+W { spawn "noctalia" "msg" "wallpaper-random"; }
+
+    // — Scratchpads (niri-scratchpad-rs) ——————————————————————————————————————
+    // Uses dedicated class and disables single-instance so it spawns a separate window rather than a tab
+    Super+Tab   { spawn "niri-scratchpad" "target" "--spawn" "ghostty --class=com.mitchellh.ghostty.scratchpad --gtk-single-instance=false" "--as-float" "appid" "com.mitchellh.ghostty.scratchpad"; }
+    Super+grave { spawn "niri-scratchpad" "target" "--spawn" "/opt/v2rayn-bin/v2rayN" "--as-float" "appid" "v2rayN"; }
+    Super+Space { toggle-overview; }
+
+    // — Screenshots ———————————————————————————————————————————————————————————
+    Print       { screenshot; }
+    Shift+Print { screenshot-window; }
+    Super+Print { screenshot-screen; }
+
+    // — System ————————————————————————————————————————————————————————————————
+    Super+L       { spawn-sh "loginctl lock-session"; }
+    Super+F1      { spawn "/home/mohireza/.config/hypr/gamemode.sh"; }
+    Super+F2      { spawn "/home/mohireza/.config/hypr/refresh_rate.sh"; }
+    Super+F3      { spawn "/home/mohireza/Documents/toggle_cpu_boost.sh"; }
+    Super+Slash   { show-hotkey-overlay; }
+
+    // — Window management —————————————————————————————————————————————————————
+    Super+C         { close-window; }
+    Super+M         { quit; }
+    Super+F         { maximize-column; }
+    Super+Shift+F   { fullscreen-window; }
+    Super+Shift+Space { toggle-window-floating; }
+    // float / un-float window
+    Super+Shift+Tab   { switch-focus-between-floating-and-tiling; }
+
+    // — Column stacking (consume / expel) ——————————————————————————————————————
+    // Consume pulls the next window into the current column (stacks it).
+    // Expel pushes the bottom window out as its own column.
+    Super+I       { consume-window-into-column; }
+    Super+Shift+I { expel-window-from-column; }
+    Super+Shift+T { toggle-column-tabbed-display; }
+  // switch between normal/tabbed
+
+    // — Resize ————————————————————————————————————————————————————————————————
+    Super+Shift+R { switch-preset-column-width; }
+    Super+Shift+H { switch-preset-window-height; }
+    Super+Minus   { set-column-width "-10%"; }
+    Super+Equal   { set-column-width "+10%"; }
+    Super+Ctrl+Minus { set-window-height "-10%"; }
+    Super+Ctrl+Equal { set-window-height "+10%"; }
+    Super+Ctrl+R     { reset-window-height; }
+
+    // — Focus —————————————————————————————————————————————————————————————————
+    Super+Left  { focus-column-left; }
+    Super+Right { focus-column-right; }
+    Super+Up    { focus-window-up; }
+    Super+Down  { focus-window-down; }
+    // Alt+Tab     { focus-window-previous; }           // alt-tab window switcher
+    Super+Ctrl+H { center-column; }
+                 // center focused column
+
+    // — Move windows ——————————————————————————————————————————————————————————
+    Super+Shift+Left  { move-column-left; }
+    Super+Shift+Right { move-column-right; }
+    Super+Shift+Up    { move-window-up; }
+    Super+Shift+Down  { move-window-down; }
+
+    // — Multi-monitor —————————————————————————————————————————————————————————
+    Super+Comma  { focus-monitor-left; }
+    Super+Period { focus-monitor-right; }
+    Super+Shift+Comma  { move-column-to-monitor-left; }
+    Super+Shift+Period { move-column-to-monitor-right; }
+
+    // — Switch workspaces —————————————————————————————————————————————————————
+    Super+1 { focus-workspace 1; }
+    Super+2 { focus-workspace 2; }
+    Super+3 { focus-workspace 3; }
+    Super+4 { focus-workspace 4; }
+    Super+5 { focus-workspace 5; }
+    Super+6 { focus-workspace 6; }
+    Super+7 { focus-workspace 7; }
+    Super+8 { focus-workspace 8; }
+    Super+9 { focus-workspace 9; }
+    Super+0 { focus-workspace 10; }
+
+    // — Move to workspace —————————————————————————————————————————————————————
+    Super+Shift+1 { move-column-to-workspace 1; }
+    Super+Shift+2 { move-column-to-workspace 2; }
+    Super+Shift+3 { move-column-to-workspace 3; }
+    Super+Shift+4 { move-column-to-workspace 4; }
+    Super+Shift+5 { move-column-to-workspace 5; }
+    Super+Shift+6 { move-column-to-workspace 6; }
+    Super+Shift+7 { move-column-to-workspace 7; }
+    Super+Shift+8 { move-column-to-workspace 8; }
+    Super+Shift+9 { move-column-to-workspace 9; }
+    Super+Shift+0 { move-column-to-workspace 10; }
+
+    // — Adjacent workspaces ———————————————————————————————————————————————————
+    Super+Ctrl+Left  { focus-workspace-up; }
+    Super+Ctrl+Right { focus-workspace-down; }
+    Super+Alt+Left   { move-column-to-workspace-up; }
+    Super+Alt+Right  { move-column-to-workspace-down; }
+
+    // — Mouse wheel ———————————————————————————————————————————————————————————
+    // Vertical scroll → switch workspaces
+    Super+WheelScrollDown cooldown-ms=150 { focus-column-right; }
+    Super+WheelScrollUp cooldown-ms=150 { focus-column-left; }
+    // Horizontal scroll → navigate columns
+    Super+WheelScrollRight cooldown-ms=150 { focus-workspace-down; }
+    Super+WheelScrollLeft cooldown-ms=150 { focus-workspace-up; }
+
+    // — Media & hardware keys —————————————————————————————————————————————————
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }
+    XF86AudioMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle"; }
+    XF86MonBrightnessUp                          { spawn "brightnessctl" "set" "10%+"; }
+    XF86MonBrightnessDown                        { spawn "brightnessctl" "set" "10%-"; }
+    XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
+    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioPause allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86Launch4                                  { spawn "/home/mohireza/.config/hypr/performance_mode.sh" "notify"; }
+}
+

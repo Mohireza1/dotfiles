@@ -1,18 +1,19 @@
 #!/bin/bash
 
-# Get the internal monitor name (assuming it starts with eDP)
-monitor_name=$(hyprctl monitors -j | jq -r '.[] | select(.name | startswith("eDP")) | .name')
-current_rate=$(hyprctl monitors -j | jq -r '.[] | select(.name | startswith("eDP")) | .refreshRate' | cut -d'.' -f1)
+CONFIG_FILE="$HOME/.config/niri/config.kdl"
 
-if [ -z "$monitor_name" ]; then
-    notify-send "Error" "Could not detect internal monitor (eDP)"
-    exit 1
-fi
-
-if [ "$current_rate" -eq 165 ]; then
-    hyprctl keyword monitor "$monitor_name,2560x1440@60.00Hz,0x0,1"
-    notify-send "Switched to 60 Hz mode"
+# Check if current config has 165Hz
+if grep -q "165.008" "$CONFIG_FILE"; then
+    # Switch to 60Hz
+    sed -i 's/165\.008/60.000/g' "$CONFIG_FILE"
+    niri msg action load-config-file
+    notify-send -u normal "Display" "Switched to 60 Hz mode"
+elif grep -q "60.000" "$CONFIG_FILE"; then
+    # Switch to 165Hz
+    sed -i 's/60\.000/165.008/g' "$CONFIG_FILE"
+    niri msg action load-config-file
+    notify-send -u normal "Display" "Switched to 165 Hz mode"
 else
-    hyprctl keyword monitor "$monitor_name,2560x1440@165.00Hz,0x0,1"
-    notify-send "Switched to 165 Hz mode"
+    notify-send -u critical "Display Error" "Could not detect current refresh rate in Niri config"
+    exit 1
 fi
