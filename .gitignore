@@ -6,9 +6,8 @@
 !.zshrc
 !.p10k.zsh
 # 2. Window Manager & Desktop Environment
-!/hypr/
+!/niri/
 !/noctalia/
-!/hyprpanel/
 
 # 3. Terminals & Editors
 !/kitty/
@@ -18,8 +17,6 @@
 
 # 4. System Monitors & CLI Tools
 !/btop/
-!/htop/
-!/ranger/
 !/lazygit/
 !/neofetch/
 
