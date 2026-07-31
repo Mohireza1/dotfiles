@@ -8,6 +8,13 @@
 prefer-no-csd
 
 
+
+
+
+
+
+window-rule { match app-id=r"^v2rayN$"; default-column-width { proportion 0.5; }; default-window-height { proportion 0.66667; }; open-floating true; }
+window-rule { match app-id=r"^com\.mitchellh\.ghostty\.scratchpad$"; default-column-width { proportion 0.5; }; default-window-height { proportion 0.66667; }; open-floating true; }
 gestures {
     hot-corners {
         top-left
@@ -82,27 +89,41 @@ window-rule {
 
 window-rule {
     opacity 0.85
-    background-effect { blur true; }
+    background-effect {
+        blur true ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        xray false
+    }
 }
 
 window-rule {
     match is-active=true
-    opacity 0.90
+    opacity 0.9
     background-effect { blur true; }
-}
-
-window-rule {
-    match app-id="^com\\.mitchellh\\.ghostty\\.scratchpad$"
-    open-floating true
-    default-column-width { fixed 2000; }
-    default-window-height { fixed 1000; }
-}
-
-window-rule {
-    match app-id="^v2rayN$"
-    open-floating true
-    default-column-width { fixed 800; }
-    default-window-height { fixed 600; }
 }
 
 // ─── BLUR CONFIGURATION ───────────────────────────────────────────────────────
@@ -153,7 +174,39 @@ animations {
         spring damping-ratio=0.9 stiffness=1000 epsilon=0.0001
     }
     window-open {
- curve "cubic-bezier" 0.25 0.1 0.25 1.0 ;
+ curve "cubic-bezier" 0.42 0.0 0.58 1.0 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -166,7 +219,24 @@ animations {
         duration-ms 300
     }
     window-close {
-        spring damping-ratio=0.8 stiffness=1000 epsilon=0.0001
+ curve "cubic-bezier" 0.0 0.0 0.58 1.0 ;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        duration-ms 250
     }
     horizontal-view-movement {
         spring damping-ratio=0.8 stiffness=800 epsilon=0.0001
@@ -209,12 +279,6 @@ spawn-at-startup "kdeconnect-indicator"
 
 
 
-// ─── WORKSPACES & SCRATCHPADS ─────────────────────────────────────────────────
-// Define standard workspaces first so "stash" does not default to Workspace 1!
-workspace "1"
-workspace "stash"
-
-
 // ─── KEYBINDINGS ──────────────────────────────────────────────────────────────
 
 // ─── LAYER RULES (BLUR) ───────────────────────────────────────────────────────
@@ -227,6 +291,7 @@ layer-rule {
 }
 
 binds {
+    
     
     
 
@@ -248,8 +313,7 @@ binds {
     // — Scratchpads (niri-scratchpad-rs) ——————————————————————————————————————
     // Uses dedicated class and disables single-instance so it spawns a separate window rather than a tab
     Super+Tab   { spawn "niri-scratchpad" "target" "--spawn" "ghostty --class=com.mitchellh.ghostty.scratchpad --gtk-single-instance=false" "--as-float" "appid" "com.mitchellh.ghostty.scratchpad"; }
-    Super+grave { spawn "niri-scratchpad" "target" "--spawn" "/opt/v2rayn-bin/v2rayN" "--as-float" "appid" "v2rayN"; }
-    Super+Space { toggle-overview; }
+    Super+grave { toggle-overview; }
 
     // — Screenshots ———————————————————————————————————————————————————————————
     Print       { screenshot; }
@@ -268,7 +332,7 @@ binds {
     Super+M         { quit; }
     Super+F         { maximize-column; }
     Super+Shift+F   { fullscreen-window; }
-    Super+Shift+Space { toggle-window-floating; }
+    Mod+Space { toggle-window-floating; }
     // float / un-float window
     Super+Shift+Tab   { switch-focus-between-floating-and-tiling; }
 
